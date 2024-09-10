@@ -1,14 +1,8 @@
 <?php
 // Database connection using PDO
-$dsn = "mysql:host=localhost;dbname=bijoya_db;charset=utf8mb4";
-$username = "root";
-$password = "sukantahui";
+require_once "./connection.php";
 
-try {
-    $pdo = new PDO($dsn, $username, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-} catch (PDOException $e) {
-    die("Error: Could not connect. " . $e->getMessage());
-}
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $registration_number = substr(strtoupper($_POST['sex']), 0, 1) . random_int(100000, 999999); // Unique registration number
@@ -143,10 +137,11 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </form>
 
         <h3 class="mt-5">Registered People</h3>
-        <table class="table table-bordered">
+        <table class="table table-bordered table-striped" style="width: 90px; overflow: scroll;">
             <thead>
                 <tr>
-                    <th>Reg. Number</th>
+                    <th>SL</th>
+                    <th>Registration</th>
                     <th>Name</th>
                     <th>Phone</th>
                     <th>WhatsApp</th>
@@ -155,8 +150,9 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($registrations as $reg): ?>
+                <?php foreach ($registrations as $key=>$reg): ?>
                     <tr>
+                        <td><?php echo $key+1; ?></td>
                         <td><?php echo htmlspecialchars($reg['registration_number']); ?></td>
                         <td><?php echo htmlspecialchars($reg['registration_name']); ?></td>
                         <td><?php echo htmlspecialchars($reg['phone']); ?></td>
