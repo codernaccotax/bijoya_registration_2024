@@ -4,37 +4,7 @@ require_once "./connection.php";
 
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $registration_number = substr(strtoupper($_POST['sex']), 0, 1) . random_int(100000, 999999); // Unique registration number
-    $registration_name = $_POST['registration_name'];
-    $phone = $_POST['phone'];
-    $whatsapp = isset($_POST['same_as_phone']) ? $phone : $_POST['whatsapp'];
-    $email = $_POST['email'] ?? null;
-    $sex = $_POST['sex'];
-    $food_habit = $_POST['food_habit'];
-    $address = $_POST['address'];
-    $age = $_POST['age'];
 
-    // Prepare and execute insert statement
-    $sql = "INSERT INTO event_registration (registration_number, registration_name, phone, whatsapp, email, sex, food_habit, address, age) 
-            VALUES (:registration_number, :registration_name, :phone, :whatsapp, :email, :sex, :food_habit, :address, :age)";
-
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([
-        ':registration_number' => $registration_number,
-        ':registration_name' => $registration_name,
-        ':phone' => $phone,
-        ':whatsapp' => $whatsapp,
-        ':email' => $email,
-        ':sex' => $sex,
-        ':food_habit' => $food_habit,
-        ':address' => $address,
-        ':age' => $age,
-    ]);
-
-    header("Location: " . $_SERVER['PHP_SELF']); // Refresh to avoid resubmission
-    exit();
-}
 
 // Fetch registered people
 $stmt = $pdo->query("
@@ -49,7 +19,6 @@ $stmt = $pdo->query("
     ORDER BY created_at DESC
 ");
 $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +40,7 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <div class="container col-sm-5 col-md-4 col-lg-4">
         <h2 class="text-center my-4">Bijoya Sanmiloni 2024</h2>
-        <form method="POST" onsubmit="return validateForm();">
+        <form method="POST" class="needs-validation" action="submit_registration.php" onsubmit="return validateForm(); novalidate">
             <div class="form-group">
                 <label for="registration_name">Name</label>
                 <input type="text" class="form-control" id="registration_name" name="registration_name" maxlength="50" required>
@@ -132,8 +101,11 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="form-group col-4">
                 <label for="age">Age</label>
                 <input type="number" class="form-control" id="age" name="age" min="1" max="120" required>
+                <div class="invalid-feedback">Please enter your age.</div>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </div>
         </form>
 
         <h3 class="mt-5">Registered People</h3>
@@ -143,10 +115,7 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th>SL</th>
                     <th>Registration</th>
                     <th>Name</th>
-                    <th>Phone</th>
                     <th>WhatsApp</th>
-                    <th>Sex</th>
-                    <th>Age</th>
                 </tr>
             </thead>
             <tbody>
@@ -155,10 +124,7 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo $key+1; ?></td>
                         <td><?php echo htmlspecialchars($reg['registration_number']); ?></td>
                         <td><?php echo htmlspecialchars($reg['registration_name']); ?></td>
-                        <td><?php echo htmlspecialchars($reg['phone']); ?></td>
                         <td><?php echo htmlspecialchars($reg['whatsapp']); ?></td>
-                        <td><?php echo htmlspecialchars($reg['sex']); ?></td>
-                        <td><?php echo htmlspecialchars($reg['age']); ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
