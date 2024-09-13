@@ -73,7 +73,7 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?version=2">
+    <link rel="stylesheet" href="style.css?version=5">
     <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <script src="./script.js"></script>
@@ -82,14 +82,20 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <div class="container col-sm-5 col-md-4 col-lg-4">
         <h2 class="text-center my-4">Bijoya Sanmiloni 2024</h2>
-        <div class="responsive-div">
-            <div class="text-overlay">
-                <h2><?php echo $registration_name;?></h2>
-                <p><?php echo $response; ?></p>
+
+        <div class="image-overlay-container">
+            <img src="./images/success.jpg" alt="Sample Image">
+            <div class="overlay">
+                <div class="overlay-text ms-2">
+                    <h2><?php echo $registration_name;?></h2>
+                    <p><?php echo $response; ?></p>
+                </div>
             </div>
         </div>
 
-        <h3 class="mt-5"><?php echo $response; ?></h3>
+
+
+        
         <h3 class="mt-5">Registered People</h3>
         <table class="table table-bordered table-striped" style="width: 90px; overflow: scroll;">
             <thead>
