@@ -93,11 +93,13 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
 
+        
+
 
 
         
         <h3 class="mt-5">Registered People</h3>
-        <table class="table table-bordered table-striped" style="width: 90px; overflow: scroll;">
+        <table id="registered-people" class="table table-bordered table-striped" style="width: 100%;">
             <thead>
                 <tr>
                     <th>SL</th>
