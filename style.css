@@ -41,7 +41,7 @@ option {
 .overlay {
     position: absolute;
     top: 0;
-    left: 10;
+    left: 0;
 
     height: 80vh;
     background: rgba(0, 0, 0, 0.0); /* Black background with 50% opacity */
@@ -58,10 +58,13 @@ option {
 }
 
 .overlay-text {
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
+    text-align: center;
 }
 
 
 #registered-people{
   width: 99vw;
 }
+
+

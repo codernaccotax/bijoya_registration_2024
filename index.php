@@ -15,7 +15,7 @@ $stmt = $pdo->query("
     , sex
     , food_habit
     , address
-    , age, created_at from event_registration
+    , age, created_at from event_registrations
     ORDER BY created_at DESC
 ");
 $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
