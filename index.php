@@ -8,34 +8,163 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .hero {
-            /* background: url('https://via.placeholder.com/1600x600') no-repeat center center; */
-            background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
-            background-size: cover;
-            color: white;
-            text-align: center;
-            padding: 100px 0;
+    .hero {
+        /* background: url('https://via.placeholder.com/1600x600') no-repeat center center; */
+        /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
+        /* background-image: url("images/durga.jpg"); */
+        background-size: cover;
+        color: black;
+        text-align: center;
+        /* padding: 100px 0; */
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+
+
+    body {
+        background: #ffffff;
+    }
+
+    .circle {
+        position: absolute;
+        border-radius: 50%;
+        background: white;
+        animation: ripple 15s infinite;
+        box-shadow: 0px 0px 1px 0px #508fb9;
+    }
+
+    .small {
+        width: 200px;
+        height: 200px;
+        left: -100px;
+        bottom: -100px;
+    }
+
+    .medium {
+        width: 400px;
+        height: 400px;
+        left: -200px;
+        bottom: -200px;
+    }
+
+    .large {
+        width: 600px;
+        height: 600px;
+        left: -300px;
+        bottom: -300px;
+    }
+
+    .xlarge {
+        width: 800px;
+        height: 800px;
+        left: -400px;
+        bottom: -400px;
+    }
+
+    .xxlarge {
+        width: 1000px;
+        height: 1000px;
+        left: -500px;
+        bottom: -500px;
+    }
+
+    .shade1 {
+        /* opacity: 0.2; */
+        background: #d9d9f2;
+        z-index: -5;
+    }
+
+    .shade2 {
+        /* opacity: 0.5; */
+        background: #b3b3e6;
+        z-index: -4;
+    }
+
+    .shade3 {
+        /* opacity: 0.7; */
+        background: #7979d2;
+        z-index: -3;
+    }
+
+    .shade4 {
+        /* opacity: 0.8; */
+        background: #5353c6;
+        z-index: -2;
+    }
+
+    .shade5 {
+        /* opacity: 0.9; */
+        background: #333399;
+        z-index: -1;
+    }
+
+    @keyframes ripple {
+        0% {
+            transform: scale(0.8);
         }
-        .hero h1 {
-            font-size: 3rem;
+
+        50% {
+            transform: scale(1.2);
         }
-        .hero p {
-            font-size: 1.25rem;
+
+        100% {
+            transform: scale(0.8);
         }
-        .section {
-            padding: 60px 0;
+    }
+
+    #durga-img {
+        box-shadow: 10px 20px 30px grey;
+    }
+
+
+    .glow {
+        font-size: 40px;
+        color: #fff;
+        text-align: center;
+        animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @-webkit-keyframes glow {
+        from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
         }
+
+        to {
+            text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        }
+    }
     </style>
 </head>
 
 <body>
+    <div class='ripple-background'>
+        <div class='circle xxlarge shade1'></div>
+        <div class='circle xlarge shade2'></div>
+        <div class='circle large shade3'></div>
+        <div class='circle mediun shade4'></div>
+        <div class='circle small shade5'></div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
+        <img src="images/channels4_profile.jpg" width="70" alt="">
         <div class="container">
             <h1>Join Us for Our Yearly Get-Together!</h1>
-            <p>We’re excited to invite you to our annual gathering. Let’s make unforgettable memories together!</p>
-            <a href="./registration.php" class="btn btn-primary btn-lg">Click Here for Registration</a>
+            <img id="durga-img" src="images/durga.jpg" width="300" alt="">
+            <p><b>We’re excited to invite you to our annual gathering. Let’s make unforgettable memories together!</b>
+            </p>
+            <a href="./registration.php" class="glow btn btn-primary btn-lg">Click Here for Registration</a>
         </div>
     </section>
 
@@ -43,7 +172,8 @@
     <section id="invitation" class="section text-center">
         <div class="container">
             <h2>You're Invited!</h2>
-            <p>We look forward to seeing you at our yearly event. It's a perfect chance to catch up, enjoy good company, and have a great time.</p>
+            <p>We look forward to seeing you at our yearly event. It's a perfect chance to catch up, enjoy good company,
+                and have a great time.</p>
             <a href="#contact" class="btn btn-primary">RSVP Now</a>
         </div>
     </section>
