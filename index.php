@@ -27,7 +27,7 @@
     }
 
     .section {
-        padding: 60px 0;
+        padding: 20px 0;
     }
 
 
@@ -190,6 +190,89 @@
     .event-table td {
         /* color: #666666; */
     }
+
+
+
+    .collage-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 8px 0;
+    }
+
+    .grid-container {
+        margin: auto;
+        max-width: 600px;
+        aspect-ratio: 1/1;
+        display: grid;
+        grid-template-columns: repeat(16, 1fr);
+        grid-template-rows: repeat(16, 1fr);
+    }
+
+    .collage1 {
+        /* background: linear-gradient(135deg, rgb(249, 110, 151) 0%, rgb(144, 0, 62) 100%); */
+
+        img {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+    }
+
+    .collage1 .item {
+        border: 2px solid white;
+    }
+
+    .item {
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 10px 0px;
+    }
+
+    .item1 {
+        z-index: 10;
+        grid-area: 1/6/5/10;
+    }
+
+    .item2 {
+        z-index: 6;
+        grid-area: 5/1/11/7;
+    }
+
+    .item3 {
+        z-index: 5;
+        grid-area: 4/6/11/13;
+    }
+
+    .item4 {
+        grid-area: 2/-1/8/-7;
+    }
+
+    .item5 {
+        z-index: 10;
+        grid-area: 7/-3/10/-6;
+    }
+
+    .item6 {
+        z-index: 6;
+        grid-area: -1/3/-9/11;
+    }
+
+    .item7 {
+        z-index: 6;
+        grid-area: -3/-2/-9/-8;
+    }
+
+    .grid-container>* {
+        transition: all 0.5s;
+    }
+
+    .grid-container>*:hover {
+        z-index: 99;
+        transform: scale(1.3);
+    }
     </style>
 </head>
 
@@ -213,6 +296,34 @@
             <a href="./registration.php" class="glow btn btn-primary btn-lg">Click Here for Registration</a>
         </div>
     </section>
+
+    <div class="collage-container collage1">
+        <div class="grid-container">
+            <div class="item item1">
+                <img src="images/img1.jpg" alt="image">
+            </div>
+            <div class="item item2">
+                <img src="images/img2.jpg" alt="image">
+            </div>
+            <div class="item item3">
+                <img src="images/img7.jpg" alt="image">
+            </div>
+            <div class="item item4">
+                <img src="images/img4.jpg" alt="image">
+            </div>
+            <div class="item item5">
+                <img src="images/img5.jpg" alt="image">
+            </div>
+            <div class="item item6">
+                <img src="images/img6.jpg" alt="image">
+            </div>
+            <div class="item item7">
+                <img src="images/img8.jpg" alt="image">
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Invitation Section -->
     <section id="invitation" class="section text-center">
