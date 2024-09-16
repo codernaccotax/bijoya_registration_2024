@@ -144,6 +144,52 @@
             text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
         }
     }
+
+    .event-details-div {
+        background-color: #5056cd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 80%;
+        max-width: 800px;
+        margin: auto;
+        color: white;
+    }
+
+    .event-title {
+        text-align: center;
+        /* color: #333333; */
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .event-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .event-table th,
+    .event-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .event-table th {
+        background-color: #f4f4f4;
+        color: #333333;
+        font-weight: 600;
+    }
+
+    .event-table tr:hover {
+        background-color: #f1f1f1;
+        color: black;
+    }
+
+    .event-table td {
+        /* color: #666666; */
+    }
     </style>
 </head>
 
@@ -178,9 +224,28 @@
         </div>
     </section>
 
+
+
     <!-- Event Details Section -->
     <section id="details" class="section bg-light">
-        <div class="container">
+        <div class="event-details-div">
+            <h1 class="event-title">Event Details</h1>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <th>Date & Time</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>October 20, 2024, 07:25 PM</td>
+                        <td>Coder & AccoTax</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- <div class="container">
             <h2 class="text-center">Event Details</h2>
             <div class="row">
                 <div class="col-md-6">
@@ -192,7 +257,7 @@
                     <p>123 Celebration Lane,<br>Party City, PC 12345</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 
 
