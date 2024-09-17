@@ -1,10 +1,13 @@
+
 .hero {
     /* background: url('https://via.placeholder.com/1600x600') no-repeat center center; */
     /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
     /* background-image: url("images/durga.jpg"); */
+
     background-size: cover;
     color: black;
     text-align: center;
+
     /* padding: 100px 0; */
 }
 
