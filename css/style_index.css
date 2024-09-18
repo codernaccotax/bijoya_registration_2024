@@ -4,7 +4,16 @@ body{
     background-image: url("../images/background.png") !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
+
     
+    
+}
+
+
+#outer-div{
+    border: 1px solid black !important;
+    align-self: center !important;
+    margin: auto !important;;
 }
 .hero {
     /* background: url('https://via.placeholder.com/1600x600') no-repeat center center; */

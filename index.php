@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>২৫ তম বিজয়াসন্মিলনী</title>
-    <link rel="stylesheet" href="./css/style_index.css?version=100">
+    <link rel="stylesheet" href="./css/style_index.css?version=101">
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="d-flex flex-column mb-3">
-        <div class="col-2">
+<div class="d-flex flex-column mb-3" id="outer-div">
+        <div class="col-md-6">
             <div class='ripple-background'>
                 <div class='circle xxlarge shade1'></div>
                 <div class='circle xlarge shade2'></div>
@@ -22,7 +22,7 @@
             </div>
 
             <!-- Hero Section -->
-            <section class="hero">
+            <section class="hero mt-3">
                 <img src="images/channels4_profile.png" width="70" alt="">
                 <div class="container">
                     <div>Coder & AccoTax</div>
@@ -30,7 +30,7 @@
                 <div class="container">
                     
                     <h2 class="caption">২৫ তম বিজয়াসন্মিলনীতে সকলকে স্বাগত</h2>
-                    <img id="durga-img" src="images/durga.jpg" width="300" alt="">
+                    <img id="durga-img" src="images/durga.jpg" alt="" class="img-fluid" style="border-radius: 10px;">>
                     <p><b>We’re excited to invite you to our annual gathering. Let’s make unforgettable memories together!</b>
                     </p>
 
@@ -68,7 +68,8 @@
             <section id="invitation" class="section text-center">
                 <div class="container">
                     <h2>আবার আমরা একসাথে</h2>
-                    <p>
+                    
+                    <p style="background-color: rgba(255,255,255,0.5); border-radius: 10px; padding: 10px;">
                         দেখতে দেখতে অনেকগুলো বছর পেরিয়ে এসেছি, 
                         আমরা অনেকেই আছি যারা দীর্ঘ সময় ধরেই কোডার পরিবারের অংশ যদিও বর্তমানে আরেকটি শাখা যুক্ত হওয়ায় নতুন নাম হয়েছে Coder & AccoTax, বহু বছরের অভ্যাস কোডার বলা তা আমরা পরিবর্তন করে উঠতে পারিনি, 
                         এ বছর আমাদের ২৫ তম বর্ষ হতে চলেছে যদিও আসলে ২৭ তম বর্ষ। ২০২০ ও ২০২১ এর অনুষ্ঠান  অনলাইনে হয়েছে কারণ তখন কোভিডের জন্য সামাজিক দূরত্ব বজায় রাখতে হয়েছিলো, আমাদের স্যারের মতে সেই দুটো বছর যেহেতু অনুষ্ঠান 
@@ -76,6 +77,7 @@
                         তাদের কাছে আমাদের এই বার্তা পৌঁছে দেওয়া যে আমরা তাদের জন্য অপেক্ষা করছি। আমাদের কাছে সবার নাম্বার নেই বার্তা পোঁছে দেওযার জন্য তাই তাদের কাছে পোঁছাবার জন্য আমরা সামাজিক মাধ্য়মকে ব্য়বহার করছি।  
 
                     </p>
+                    
                 </div>
             </section>
 
@@ -122,9 +124,11 @@
             </footer>
         </div>
     </div>
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
