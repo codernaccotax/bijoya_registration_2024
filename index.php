@@ -23,7 +23,7 @@
 
             <!-- Hero Section -->
             <section class="hero">
-                <img src="images/channels4_profile.jpg" width="70" alt="">
+                <img src="images/channels4_profile.png" width="70" alt="">
                 <div class="container">
                     <div>Coder & AccoTax</div>
                 </div>
@@ -34,7 +34,7 @@
                     <p><b>We’re excited to invite you to our annual gathering. Let’s make unforgettable memories together!</b>
                     </p>
 
-                    <a href="./registration.php" class="glow btn btn-primary btn-lg" style="text-decoration: none;">Click Here for Registration</a>
+                    <a href="./registration.php" id="clk_reg" class="glow btn btn-primary btn-lg" style="text-decoration: none;">Click Here for Registration</a>
                 </div>
             </section>
 

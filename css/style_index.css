@@ -198,13 +198,15 @@ body {
 }
 
 .event-table tr:hover {
+    
     background-color: #f1f1f1;
-    color: black;
+    
 }
 
 .event-table td {
     /* color: #666666; */
 }
+
 
 
 
