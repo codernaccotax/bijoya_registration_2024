@@ -23,7 +23,7 @@
 
             <!-- Hero Section -->
             <section class="hero">
-                <img src="images/channels4_profile.jpg" width="70" alt="">
+                <img src="images/channels4_profile.png" width="70" alt="">
                 <div class="container">
                     <div>Coder & AccoTax</div>
                 </div>
