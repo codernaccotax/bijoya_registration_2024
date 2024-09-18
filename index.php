@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>২৫ তম বিজয়াসন্মিলনী</title>
-    <link rel="stylesheet" href="./style_index.css">
+    <link rel="stylesheet" href="./css/style_index.css?version=100">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 </head>

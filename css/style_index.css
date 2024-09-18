@@ -1,4 +1,11 @@
-
+body{
+    /* background: rgb(129,103,128); */
+    /* background: linear-gradient(32deg, rgba(129,103,128,1) 34%, rgba(40,18,34,1) 66%, rgba(216,17,13,1) 100%) !important; */
+    background-image: url("../images/background.png") !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    
+}
 .hero {
     /* background: url('https://via.placeholder.com/1600x600') no-repeat center center; */
     /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
@@ -32,7 +39,7 @@ body {
 .circle {
     position: absolute;
     border-radius: 50%;
-    background: white;
+    background: rgba(255, 255, 255, 0);
     animation: ripple 15s infinite;
     box-shadow: 0px 0px 1px 0px #508fb9;
 }
@@ -74,31 +81,31 @@ body {
 
 .shade1 {
     /* opacity: 0.2; */
-    background: #d9d9f2;
+    background: #785dff1d;
     z-index: -5;
 }
 
 .shade2 {
     /* opacity: 0.5; */
-    background: #b3b3e6;
+    background: #4f4cff2b;
     z-index: -4;
 }
 
 .shade3 {
     /* opacity: 0.7; */
-    background: #7979d2;
+    background: #4863ba7f;
     z-index: -3;
 }
 
 .shade4 {
     /* opacity: 0.8; */
-    background: #5353c6;
+    background: #1f11b92f;
     z-index: -2;
 }
 
 .shade5 {
     /* opacity: 0.9; */
-    background: #333399;
+    background: #301a8972;
     z-index: -1;
 }
 
