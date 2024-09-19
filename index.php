@@ -12,7 +12,7 @@
 
 <body>
 <div class="d-flex flex-column flex-md-row  mb-3" id="outer-div">
-        <div class="col-md-6">
+        <div class="col-md-6 col-xl-3">
             <div class='ripple-background'>
                 <div class='circle xxlarge shade1'></div>
                 <div class='circle xlarge shade2'></div>
@@ -31,7 +31,7 @@
                     
                     <h2 class="caption">২৫ তম বিজয়াসন্মিলনীতে সকলকে স্বাগত</h2>
                     <div style="color: #f5cb81;">এই অনুষ্ঠানে যোগদানের জন্য আপনার নাম নথিভূক্ত করে আমাদের সাহায্য করুন </div>
-                    <img id="durga-img" src="images/durga.jpg" alt="" class="img-fluid" style="border-radius: 10px;">
+                    <img id="durga-img" src="images/durga.png" alt="" class="img-fluid" style="border-radius: 10px;">
                     <a href="./registration.php" id="clk_reg" class="glow btn btn-primary btn-lg" style="text-decoration: none; margin-top: 5px;">Click Here for Registration</a>
                     <p><b>প্রত্যেক বছর নতুন কিছু স্মৃতিগাথা রচনা হয়, এই বছর আপনার অবদান অন্য মাত্রা এনে দেবে। </b>
                     </p>
@@ -42,7 +42,7 @@
 
             
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-xl-3">
         <div class="collage-container collage1">
                 <div class="grid-container">
                     <div class="item item1">
@@ -89,7 +89,7 @@
 
 
             <!-- Event Details Section -->
-            <section id="details" class="section bg-light">
+            <!-- <section id="details" class="section bg-light">
                 <div class="event-details-div">
                     <h1 class="event-title">Event Details</h1>
                     <table class="event-table">
@@ -107,13 +107,13 @@
                         </tbody>
                     </table>
                 </div>
-            </section>
+            </section> -->
 
 
             <!-- Footer -->
-            <footer class="bg-light text-center py-3">
+            <!-- <footer class="bg-light text-center py-3">
                 <p>&copy; 2024 Get-Together Event. Coder & AccoTax.</p>
-            </footer>
+            </footer> -->
         </div>
     </div>
     
