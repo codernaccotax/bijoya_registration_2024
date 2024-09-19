@@ -2,8 +2,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: aliceblue;
 }
-
+input{
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #823771;
+}
+.form-control{
+    background-color: transparent;
+    color: antiquewhite;
+}
+.form-group{
+    margin-top: 4px;
+}
+option{
+    color: rgb(73, 73, 2);
+  }
 body{
     background-image: linear-gradient(to left bottom, #051937, #402b5b, #823771, #c44572, #f96363);
 }
