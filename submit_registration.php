@@ -97,6 +97,10 @@ $number_of_records=count($registrations)
                 </div>
             </div>
         </div>
+        <?php 
+            //print_r($_SERVER['HTTP_ORIGIN']);
+        ?>
+        <a href="https://bitsnwires.com/registration.php">Add another</a>
 
         
 

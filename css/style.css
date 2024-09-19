@@ -5,10 +5,11 @@
 }
 
 body{
-    background: linear-gradient(217deg, rgba(181, 160, 249, 0.8), rgba(255,0,0,0) 70.71%),
-            linear-gradient(127deg, rgba(236, 244, 236, 0.8), rgba(0,255,0,0) 70.71%),
+    background: linear-gradient(217deg, rgba(245, 111, 22, 0.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(228, 77, 31, 0.8), rgba(0,255,0,0) 70.71%),
             linear-gradient(336deg, rgba(131, 131, 142, 0.8), rgba(0,0,255,0) 70.71%);
 }
+
 select {
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -67,4 +68,9 @@ option {
   width: 99vw;
 }
 
+
+.disabled {
+    background-color: #ccc; /* Gray background */
+    cursor: not-allowed; /* Not-allowed cursor */
+}
 

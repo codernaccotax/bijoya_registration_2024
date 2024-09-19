@@ -1,3 +1,25 @@
+
+const checkbox = document.getElementById('agreeCheckbox');
+const submitButton = document.getElementById('submitButton');
+console.log(submitButton);
+// Function to toggle the disabled state of the button
+function toggleSubmitButton() {
+    if (checkbox.checked) {
+        submitButton.disabled = false;
+        submitButton.classList.remove('disabled');
+    } else {
+        submitButton.disabled = true;
+        submitButton.classList.add('disabled');
+    }
+}
+
+// Add event listener to the checkbox
+checkbox.addEventListener('change', toggleSubmitButton);
+
+
+
+
+
 function validateForm() {
     const phone = document.getElementById("phone").value;
     const whatsapp = document.getElementById("whatsapp").value;
@@ -27,3 +49,5 @@ function toggleWhatsapp() {
     const whatsappInput = document.getElementById("whatsapp");
     whatsappInput.disabled = sameAsPhone;
 }
+
+
