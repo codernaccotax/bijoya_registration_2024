@@ -33,7 +33,7 @@
                     <div style="color: #f5cb81;">এই অনুষ্ঠানে যোগদানের জন্য আপনার নাম নথিভূক্ত করে আমাদের সাহায্য করুন </div>
                     <img id="durga-img" src="images/durga.jpg" alt="" class="img-fluid" style="border-radius: 10px;">
                     <a href="./registration.php" id="clk_reg" class="glow btn btn-primary btn-lg" style="text-decoration: none; margin-top: 5px;">Click Here for Registration</a>
-                    <p><b>We’re excited to invite you to our annual gathering. Let’s make unforgettable memories together!</b>
+                    <p><b>প্রত্যেক বছর নতুন কিছু স্মৃতিগাথা রচনা হয়, এই বছর আপনার অবদান অন্য মাত্রা এনে দেবে। </b>
                     </p>
 
                     
