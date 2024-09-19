@@ -14,7 +14,6 @@ body{
 }
 
 #outer-div{
-    border: 1px solid black !important;
     align-self: center !important;
     margin: auto !important;;
 }

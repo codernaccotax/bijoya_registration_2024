@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<div class="d-flex flex-column mb-3" id="outer-div">
+<div class="d-flex flex-column flex-md-row  mb-3" id="outer-div">
         <div class="col-md-6">
             <div class='ripple-background'>
                 <div class='circle xxlarge shade1'></div>
@@ -21,7 +21,7 @@
                 <div class='circle small shade5'></div>
             </div>
 
-            <!-- Hero Section -->
+
             <section class="hero mt-3">
                 <img src="images/channels4_profile.png" width="70" alt="">
                 <div class="container">
@@ -30,15 +30,20 @@
                 <div class="container">
                     
                     <h2 class="caption">২৫ তম বিজয়াসন্মিলনীতে সকলকে স্বাগত</h2>
-                    <img id="durga-img" src="images/durga.jpg" alt="" class="img-fluid" style="border-radius: 10px;">>
+                    <div style="color: #f5cb81;">এই অনুষ্ঠানে যোগদানের জন্য আপনার নাম নথিভূক্ত করে আমাদের সাহায্য করুন </div>
+                    <img id="durga-img" src="images/durga.jpg" alt="" class="img-fluid" style="border-radius: 10px;">
+                    <a href="./registration.php" id="clk_reg" class="glow btn btn-primary btn-lg" style="text-decoration: none; margin-top: 5px;">Click Here for Registration</a>
                     <p><b>We’re excited to invite you to our annual gathering. Let’s make unforgettable memories together!</b>
                     </p>
 
-                    <a href="./registration.php" id="clk_reg" class="glow btn btn-primary btn-lg" style="text-decoration: none;">Click Here for Registration</a>
+                    
                 </div>
             </section>
 
-            <div class="collage-container collage1">
+            
+        </div>
+        <div class="col-md-6">
+        <div class="collage-container collage1">
                 <div class="grid-container">
                     <div class="item item1">
                         <img src="images/img9.jpg" alt="image">
@@ -102,25 +107,12 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- <div class="container">
-            <h2 class="text-center">Event Details</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>Date and Time</h3>
-                    <p>Saturday, October 12, 2024<br>From 5:00 PM to 10:00 PM</p>
-                </div>
-                <div class="col-md-6">
-                    <h3>Location</h3>
-                    <p>123 Celebration Lane,<br>Party City, PC 12345</p>
-                </div>
-            </div>
-        </div> -->
             </section>
 
 
             <!-- Footer -->
             <footer class="bg-light text-center py-3">
-                <p>&copy; 2024 Get-Together Event. All rights reserved.</p>
+                <p>&copy; 2024 Get-Together Event. Coder & AccoTax.</p>
             </footer>
         </div>
     </div>
