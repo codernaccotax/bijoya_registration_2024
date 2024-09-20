@@ -1,3 +1,6 @@
+<?php 
+    $pass="*@Coder7791";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,12 +13,25 @@
 
     <link rel="stylesheet" href="../css/style_admin.css?version=6">
     <!-- Bootstrap Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet">
     <script src="./script.js"></script>
 </head>
 
 <body>
-    <div class="container col-sm-5 col-md-8 col-lg-6" style="border: 1px solid black;">
+    <form style="width: 200px; margin: auto; padding-top: 50px;" action="index.php" method="POST">
+        <div class="form-row align-items-center">
+            <div class="col-auto">
+                <input type="text" class="form-control mb-2" id="password" name="password" value="" placeholder="Passcode">
+            </div>           
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </div>
+        </div>
+    </form>
+    <?php
+    if(isset($_POST["password"]) && $_POST["password"]==$pass ){?>
+        <div class="container col-sm-5 col-md-8 col-lg-6" style="border: 1px solid black;">
         <h2>ADMIN</h2>
         <h3>There was a brown crow</h3>
         <button type="button" class="btn btn-primary m-2" id="all-students">All Students</button>
@@ -26,6 +42,9 @@
 
         </div>
     </div>
+    <?php } 
+    ?>
+    
 
 
     <script src="./admin.js">
