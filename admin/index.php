@@ -22,7 +22,7 @@
     <form style="width: 200px; margin: auto; padding-top: 50px;" action="index.php" method="POST">
         <div class="form-row align-items-center">
             <div class="col-auto">
-                <input type="text" class="form-control mb-2" id="password" name="password" value="" placeholder="Passcode">
+                <input type="password" class="form-control mb-2" id="password" name="password" value="" placeholder="Passcode">
             </div>           
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary mb-2">Submit</button>
