@@ -67,6 +67,12 @@ option {
     /* opacity: 0; */
     /* transition: opacity 0.3s ease; */
 }
+@media (max-width: 400px){
+    .overlay{
+        
+    margin-left: 40px;
+    }
+}
 
 .image-overlay-container:hover .overlay {
     opacity: 1;

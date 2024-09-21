@@ -20,13 +20,13 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <thead>
         <tr>
             <th>SL</th>
-            <th>Registration</th>
+            <th>Reg No.</th>
             <th>Name</th>
             <th>WhatsApp</th>
             <th>Action</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody> 
         <?php foreach ($registrations as $key => $reg): ?>
            <?php 
                 $message="আপনার রেজিস্ট্রেশন সম্পূর্ণ হয়েছে, Registration No. ".$reg['registration_number']."\n"; 

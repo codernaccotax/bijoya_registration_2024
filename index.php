@@ -30,7 +30,7 @@
                 <div class="container">
                     
                     <h2 class="caption">২৫ তম বিজয়াসন্মিলনীতে সকলকে স্বাগত</h2>
-                    <div style="color: #f5cb81;">এই অনুষ্ঠানে যোগদানের জন্য আপনার নাম নথিভূক্ত করে আমাদের সাহায্য করুন </div>
+                    <div style="color: #f5cb81; text-shadow: 2px 2px #0e0707;">এই অনুষ্ঠানে যোগদানের জন্য আপনার নাম নথিভূক্ত করে আমাদের সাহায্য করুন </div>
                     <img id="durga-img" src="images/durga.png" alt="" class="img-fluid" style="border-radius: 10px;">
                     <a href="./registration.php" id="clk_reg" class="glow btn btn-primary btn-lg" style="text-decoration: none; margin-top: 5px;">Click Here for Registration</a>
                     <p><b>প্রত্যেক বছর নতুন কিছু স্মৃতিগাথা রচনা হয়, এই বছর আপনার অবদান অন্য মাত্রা এনে দেবে। </b>

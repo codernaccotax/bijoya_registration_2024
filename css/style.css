@@ -1,10 +1,10 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
     background-image: linear-gradient(to left bottom, #051937, #402b5b, #823771, #c44572, #f96363);
 }
 
@@ -13,6 +13,7 @@ select {
     font-size: 16px;
     padding: 10px;
 }
+
 option {
     padding: 10px;
 }
@@ -43,13 +44,20 @@ option {
     left: 0;
 
     height: 80vh;
-    background: rgba(0, 0, 0, 0.0); /* Black background with 50% opacity */
+    background: rgba(0, 0, 0, 0.0);
+    /* Black background with 50% opacity */
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     /* opacity: 0; */
     /* transition: opacity 0.3s ease; */
+}
+
+@media (max-width: 400px) {
+    .overlay {
+        margin-left: 40px;
+    }
 }
 
 .image-overlay-container:hover .overlay {
@@ -62,13 +70,14 @@ option {
 }
 
 
-#registered-people{
-  width: 99vw;
+#registered-people {
+    width: 99vw;
 }
 
 
 .disabled {
-    background-color: #ccc; /* Gray background */
-    cursor: not-allowed; /* Not-allowed cursor */
+    background-color: #ccc;
+    /* Gray background */
+    cursor: not-allowed;
+    /* Not-allowed cursor */
 }
-
