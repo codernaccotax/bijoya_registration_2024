@@ -30,3 +30,4 @@ avegStudentsButton.addEventListener('click', function () {
     xhttp.open("GET", "nonveg_students.php", true);
     xhttp.send();
 });
+

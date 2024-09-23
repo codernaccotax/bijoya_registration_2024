@@ -111,7 +111,8 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </form>
 
         <h3 class="mt-5">Registered People</h3>
-        <table class="table table-bordered table-striped" style="width: 90px; overflow: scroll;">
+        <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for names..">
+        <table id="registered-people" class="table table-bordered table-striped" style="width: 90px; overflow: scroll;">
             <thead>
                 <tr>
                     <th>SL</th>
@@ -132,7 +133,30 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tbody>
         </table>
     </div>
-    
+    <script>
+        function filterTable() {
+            // Get the search input value
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toLowerCase();
+            var table = document.getElementById("registered-people");
+            var tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those that don't match the search query
+            for (var i = 1; i < tr.length; i++) { // start from 1 to skip the header row
+                var td = tr[i].getElementsByTagName("td");
+                var match = false;
+                for (var j = 0; j < td.length; j++) {
+                    if (td[j]) {
+                        if (td[j].innerHTML.toLowerCase().indexOf(filter) > -1) {
+                            match = true;
+                            break;
+                        }
+                    }
+                }
+                tr[i].style.display = match ? "" : "none";
+            }
+        }
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <!-- Bootstrap JS (Optional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

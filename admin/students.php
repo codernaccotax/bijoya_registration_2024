@@ -16,6 +16,7 @@ $stmt = $pdo->query("
 $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
+<input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for names..">
 <table id="registered-people" class="table table-bordered table-striped" style="width: 100%;">
     <thead>
         <tr>
