@@ -37,13 +37,10 @@ if (!isset($_SESSION['username'])) {
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="https://<?php echo $_SERVER['SERVER_ADDR']; ?>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
+                            <a class="nav-link active" href="#" aria-current="page" onClick="javascript:history.back();">Go back</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,6 +59,7 @@ if (!isset($_SESSION['username'])) {
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
+                      
                         <li class="nav-item">
                             <a class="nav-link" href="logout.php">Logout</a>
                         </li>
@@ -72,12 +70,12 @@ if (!isset($_SESSION['username'])) {
 
         <div class="welcome-container">
             <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>! </h2>
-            <p>You have successfully logged in. <a class="btn btn-primary m-2" href="logout.php">Logout</a></p>
+            <p>You have successfully logged in.</p>
 
         </div>
-        <button type="button" class="btn btn-primary m-2" id="all-students">All Students</button>
+        <!-- <button type="button" class="btn btn-primary m-2" id="all-students">All Students</button>
         <button type="button" class="btn btn-primary m-2" id="veg-students">Veg Students</button>
-        <button type="button" class="btn btn-primary m-2" id="nonveg-students">Non Veg Students</button>
+        <button type="button" class="btn btn-primary m-2" id="nonveg-students">Non Veg Students</button> -->
         <!-- <a href="https://api.whatsapp.com/send?phone=+919830371685&text=Test">Send whatsapp</a> -->
         <div id="result">
 
