@@ -59,6 +59,17 @@ if (!isset($_SESSION['username'])) {
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Database
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="backup.php">Backup</a></li>
+                            </ul>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="database-backup.php">Database Backup</a></li>
+                            </ul>
+                        </li>
                       
                         <li class="nav-item">
                             <a class="nav-link" href="logout.php">Logout</a>
