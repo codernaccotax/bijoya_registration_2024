@@ -18,9 +18,9 @@ ALTER TABLE `event_registrations` ADD UNIQUE `my_uniq_student`(`registration_nam
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL,
+    username VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL
 );
 
 
-INSERT INTO users (username, password) VALUES ('admin', SHA2('1234', 256));
+INSERT INTO users (username, password) VALUES ('admin', SHA2('India2day', 256));

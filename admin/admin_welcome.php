@@ -5,7 +5,7 @@ if (!isset($_SESSION['username'])) {
     header('Location: index.php');
     exit;
 }
-$pass = "*@Coder7791";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,30 +24,55 @@ $pass = "*@Coder7791";
 </head>
 
 <body>
-    <form style="width: 200px; margin: auto; padding-top: 50px;" action="index.php" method="POST">
-        <div class="form-row align-items-center">
-            <div class="col-auto">
-                <input type="password" class="form-control mb-2" id="password" name="password" value="" placeholder="Passcode">
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-2">Submit</button>
-            </div>
-        </div>
-    </form>
-    <?php
-    if (isset($_POST["password"]) && $_POST["password"] == $pass) { ?>
-        <div class="container col-sm-5 col-md-8 col-lg-6" style="border: 1px solid black;">
-            <h2>ADMIN</h2>
-            <button type="button" class="btn btn-primary m-2" id="all-students">All Students</button>
-            <button type="button" class="btn btn-primary m-2" id="veg-students">Veg Students</button>
-            <button type="button" class="btn btn-primary m-2" id="nonveg-students">Non Veg Students</button>
-            <!-- <a href="https://api.whatsapp.com/send?phone=+919830371685&text=Test">Send whatsapp</a> -->
-            <div id="result">
 
+    <div class="container col-sm-5 col-md-8 col-lg-6" style="border: 1px solid black;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown link
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+
+        <div class="welcome-container">
+            <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>! </h2>
+            <p>You have successfully logged in. <a class="btn btn-primary m-2" href="logout.php">Logout</a></p>
+
         </div>
-    <?php }
-    ?>
+        <button type="button" class="btn btn-primary m-2" id="all-students">All Students</button>
+        <button type="button" class="btn btn-primary m-2" id="veg-students">Veg Students</button>
+        <button type="button" class="btn btn-primary m-2" id="nonveg-students">Non Veg Students</button>
+        <!-- <a href="https://api.whatsapp.com/send?phone=+919830371685&text=Test">Send whatsapp</a> -->
+        <div id="result">
+
+        </div>
+    </div>
+
+
 
 
 
