@@ -65,8 +65,6 @@ if (!isset($_SESSION['username'])) {
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="backup.php">Backup</a></li>
-                            </ul>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="database-backup.php">Database Backup</a></li>
                             </ul>
                         </li>
