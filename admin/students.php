@@ -24,6 +24,7 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <th>Reg No.</th>
             <th>Name</th>
             <th>WhatsApp</th>
+            <th>Image</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -40,6 +41,11 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <td><?php echo htmlspecialchars($reg['registration_number']); ?></td>
                 <td><?php echo htmlspecialchars($reg['registration_name']); ?></td>
                 <td><?php echo htmlspecialchars($reg['whatsapp']); ?></td>
+                <td>
+                    <a target="_blank" href="../student_images/<?php echo $reg['registration_number'];?>.jpg">
+                        <img src="../student_images/<?php echo $reg['registration_number'];?>.jpg" alt="no image" width="30px">
+                    </a>
+                </td>
                 <td>
                 <a target="_blank" href="https://api.whatsapp.com/send?phone=+91<?php echo $reg['whatsapp_original'];?>&text=<?php echo $message; ?>">Send whatsapp</a>
                 </td>
