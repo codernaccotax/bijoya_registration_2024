@@ -17,6 +17,10 @@
 
 
 <?php
+if (!isset($_SESSION['username'])) {
+    header('Location: index.php');
+    exit;
+}
 require_once "../connection.php";
 
 // Database connection settings
