@@ -31,7 +31,7 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <tbody> 
         <?php foreach ($registrations as $key => $reg): ?>
            <?php 
-                $message="Dear ".$reg['registration_name'].",\n";
+                $message="Dear ".$reg['registration_name'].", ";
                 $message.="আপনার রেজিস্ট্রেশন সম্পূর্ণ হয়েছে, Registration No. ".$reg['registration_number']."\n"; 
                 $message.=" আপনি ২০শে অক্টোবর ২০২৪ এ আমাদের বিজয়া সন্মিলনীতে উপস্থিত থাকার যে অঙ্গীকার করেছেন তার জন্য আপনাকে ধন্যবাদ\n";
                 $message.=" আপনার একটি ছবি এখানে আপলোড করে দিলে আমাদের বিশেষ সুবিধা হয়। ";
