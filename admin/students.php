@@ -32,10 +32,22 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($registrations as $key => $reg): ?>
            <?php 
                 $message="Dear ".$reg['registration_name'].", ";
-                $message.="আপনার রেজিস্ট্রেশন সম্পূর্ণ হয়েছে, Registration No. ".$reg['registration_number']."\n"; 
+                $message.="%0D%0A"."আপনার রেজিস্ট্রেশন সম্পূর্ণ হয়েছে, Registration No. ".$reg['registration_number'].""; 
                 $message.=" আপনি ২০শে অক্টোবর ২০২৪ এ আমাদের বিজয়া সন্মিলনীতে উপস্থিত থাকার যে অঙ্গীকার করেছেন তার জন্য আপনাকে ধন্যবাদ\n";
                 $message.=" আপনার একটি ছবি এখানে আপলোড করে দিলে আমাদের বিশেষ সুবিধা হয়। ";
-                $message.=" আপনি যদি আমাদের বিশেষ কোন বার্তা দিতে চান তাহলে এখানে দিতে পারেন।";
+                $message.="%0D%0A"."আপনি যদি আমাদের বিশেষ কোন বার্তা দিতে চান তাহলে এখানে দিতে পারেন।";
+                $message.="%0D%0A"."ধন্যবাদান্তে"."%0D%0A". "Coder "."%26"." AccoTax"."%0D%0A";
+                $message.="Dear ".$reg['registration_name'].", ";
+                $message.="%0D%0A";
+                $message.="Your registration is complete, Registration No. ";
+                $message.=$reg['registration_number'];
+                $message.=". ";
+                $message.="Thank you for your commitment to attend our Bijoya Sammilani on 20th October 2024. Uploading your photo here would be our privilege.  If you want to send us a special message, you can do so here.";
+                $message.="%0D%0A";
+                $message.="Thanking you";
+                $message.="%0D%0A";
+                $message.="Coder "."%26"." AccoTax";
+
            ?>
             <tr>
                 <td><?php echo $key+1; ?></td>
