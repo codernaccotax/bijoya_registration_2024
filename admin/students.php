@@ -60,7 +60,10 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </a>
                 </td>
                 <td>
-                <a target="_blank" href="https://api.whatsapp.com/send?phone=+91<?php echo $reg['whatsapp_original'];?>&text=<?php echo $message; ?>">Send whatsapp</a>
+                <a target="_blank" href="https://api.whatsapp.com/send?phone=+91<?php echo $reg['whatsapp_original'];?>&text=<?php echo $message; ?>">whatsapp</a>
+                </td>
+                <td>
+                    <a href="edit_registration.php?id=<?php echo $reg['id'];?>">Edit</a>
                 </td>
             </tr>
         <?php endforeach; ?>
