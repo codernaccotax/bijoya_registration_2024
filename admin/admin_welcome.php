@@ -93,7 +93,9 @@ if (!isset($_SESSION['username'])) {
             <?php
             require_once "../connection.php";
             require_once "./functions.php";
-            $stmt = $pdo->query("select group_title
+            $stmt = $pdo->query("select ifnull(group_title,'Grand Total') as age_group, male_nonveg, female_nonveg, male_veg, female_veg, total_nonveg, total_veg, group_total 
+                from
+                (select group_title
                 ,sum(male_nonveg) as male_nonveg
                 ,sum(female_nonveg) as female_nonveg
                 ,sum(male_veg) as male_veg
@@ -108,18 +110,19 @@ if (!isset($_SESSION['username'])) {
                     , case when category='male_veg' then student_count else 0 end as male_veg
                     , case when category='female_veg' then student_count else 0 end as female_veg
                     from
-                (select 'between 8 and 13' as group_title,concat(sex,'_',food_habit) as category,count(*) as student_count from event_registrations where age>8 and age<=13 group by sex,food_habit
+                (select 'a) Less than 14' as group_title,concat(sex,'_',food_habit) as category,count(*) as student_count from event_registrations where  age<=13 group by sex,food_habit
                 union
-                select 'between 14 and 17' as group_title,concat(sex,'_',food_habit) as category,count(*) as student_count from event_registrations where age>13 and age<=17 group by sex,food_habit
+                select 'b) between 14 and 17' as group_title,concat(sex,'_',food_habit) as category,count(*) as student_count from event_registrations where age>13 and age<=17 group by sex,food_habit
                 union
-                select 'between 18 and 24' as group_title,concat(sex,'_',food_habit) as category,count(*) as student_count from event_registrations where age>17 and age<=24 group by sex,food_habit
+                select 'c) between 18 and 24' as group_title,concat(sex,'_',food_habit) as category,count(*) as student_count from event_registrations where age>17 and age<=24 group by sex,food_habit
                 union
-                select 'between 25 and 35' as group_title,concat(sex,'_',food_habit) as category,count(*) as student_count from event_registrations where age>24 and age<=35 group by sex,food_habit
+                select 'd) between 25 and 35' as group_title,concat(sex,'_',food_habit) as category,count(*) as student_count from event_registrations where age>24 and age<=35 group by sex,food_habit
                 union
-                select 'between 36 and 50' as group_title,concat(sex,'_',food_habit) as category,count(*) as student_count from event_registrations where age>36 and age<=50 group by sex,food_habit
+                select 'e) between 36 and 50' as group_title,concat(sex,'_',food_habit) as category,count(*) as student_count from event_registrations where age>36 and age<=50 group by sex,food_habit
                 union
-                select 'Morethan 50' as group_title,concat(sex,'_',food_habit)  as category,count(*) as student_count from event_registrations where age>50 group by sex,food_habit) as table1)
-                as table2 group by group_title WITH ROLLUP");
+                select 'f) Morethan 50' as group_title,concat(sex,'_',food_habit)  as category,count(*) as student_count from event_registrations where age>50 group by sex,food_habit) as table1)
+                as table2  group by group_title WITH ROLLUP)
+                as table3 order by group_title");
             $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
             echo generateBootstrapTable($registrations);
             ?>

@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header('Location: index.php');
+    exit;
+}
 // Database connection using PDO
 require_once "../connection.php";
 
@@ -13,10 +19,9 @@ $stmt = $pdo->query("
     , address
     , age
     from event_registrations
-    where id=".$_GET['id']);
+    where id=" . $_GET['id']);
 $student = $stmt->fetch(PDO::FETCH_ASSOC);
 
-print_r($student);
 // Fetch registered people
 $stmt = $pdo->query("
     select id, registration_number, registration_name
@@ -45,13 +50,21 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../css/style_registration.css?version=12">
     <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
-    
+
 </head>
 
 <body>
     <div class="container col-sm-5 col-md-4 col-lg-4">
-        <h2 class="text-center my-4">Bijoya Sanmiloni 2024</h2>
+        <h2 class="text-center my-4">Update Student Details</h2>
         <form method="POST" class="needs-validation" action="update_registration.php" onsubmit="return validateForm(); novalidate">
+            <div class="form-group" style="display: none;">
+                <label for="registration_id">ID</label>
+                <input type="text" readonly class="form-control" value="<?php echo $student['id']; ?>" id="registration_id" name="id">
+            </div>
+            <div class="form-group" style="display: none;">
+                <label for="registration_number">Regn.</label>
+                <input type="text" readonly class="form-control" value="<?php echo $student['registration_number']; ?>" id="registration_number" name="registration_number">
+            </div>
             <div class="form-group">
                 <label for="registration_name">Name</label>
                 <input type="text" class="form-control" value="<?php echo $student['registration_name']; ?>" id="registration_name" name="registration_name" maxlength="50" required>
@@ -92,35 +105,35 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="form-group">
                 <label for="sex">Sex</label>
                 <select value="<?php echo $student['sex']; ?>" class="form-control" id="sex" name="sex" required>
-                <?php 
-                    if($student['sex']=='male'){
+                    <?php
+                    if ($student['sex'] == 'male') {
                         echo '<option selected value="male">Male</option>';
                         echo '<option  value="female">Female</option>';
-                    }else{
+                    } else {
                         echo '<option  value="male">Male</option>';
                         echo '<option selected value="female">Female</option>';
                     }
-                ?>    
+                    ?>
                 </select>
             </div>
             <div class="form-group">
                 <label for="food_habit">Food Habit</label>
                 <select class="form-control" id="food_habit" name="food_habit" required>
-                    <?php 
-                        if($student['food_habit']=='veg'){
-                            echo '<option selected value="veg">Vegetarian</option>';
-                            echo '<option value="nonveg">Non-Vegetarian</option>';
-                        }else{
-                            echo '<option value="veg">Vegetarian</option>';
-                            echo '<option selected value="nonveg">Non-Vegetarian</option>';
-                        }
+                    <?php
+                    if ($student['food_habit'] == 'veg') {
+                        echo '<option selected value="veg">Vegetarian</option>';
+                        echo '<option value="nonveg">Non-Vegetarian</option>';
+                    } else {
+                        echo '<option value="veg">Vegetarian</option>';
+                        echo '<option selected value="nonveg">Non-Vegetarian</option>';
+                    }
                     ?>
-                
+
                 </select>
             </div>
             <div class="form-group">
                 <label for="address">Address</label>
-                <textarea class="form-control"  id="address" name="address" rows="3">
+                <textarea class="form-control" id="address" name="address" rows="3">
                     <?php echo $student['address']; ?>
                 </textarea>
             </div>
@@ -130,7 +143,7 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="invalid-feedback">Please enter your age.</div>
             </div>
             <label>
-            <input type="checkbox" id="agreeCheckbox"> 20 শে অক্টোবর আমি উপস্থিত থাকছি  </label>
+                <input type="checkbox" id="agreeCheckbox"> 20 শে অক্টোবর আমি উপস্থিত থাকছি </label>
             <div class="form-group mt-3">
                 <button id="submitButton" type="submit" class="btn btn-primary btn-block">Update</button>
             </div>
@@ -148,9 +161,9 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($registrations as $key=>$reg): ?>
+                <?php foreach ($registrations as $key => $reg): ?>
                     <tr>
-                        <td><?php echo $key+1; ?></td>
+                        <td><?php echo $key + 1; ?></td>
                         <td><?php echo htmlspecialchars($reg['registration_number']); ?></td>
                         <td><?php echo htmlspecialchars($reg['registration_name']); ?></td>
                         <td><?php echo htmlspecialchars($reg['whatsapp']); ?></td>
@@ -181,6 +194,30 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 }
                 tr[i].style.display = match ? "" : "none";
             }
+        }
+
+        function validateForm() {
+            const phone = document.getElementById("phone").value;
+            const whatsapp = document.getElementById("whatsapp").value;
+            const sameAsPhone = document.getElementById("same_as_phone").checked;
+            const age = document.getElementById("age").value;
+
+            if (!phone.match(/^\d{10}$/)) {
+                alert("Phone number must be 10 digits.");
+                return false;
+            }
+
+            if (!sameAsPhone && !whatsapp.match(/^\d{10}$/)) {
+                alert("WhatsApp number must be 10 digits.");
+                return false;
+            }
+
+            if (age <= 0 || age > 120) {
+                alert("Please enter a valid age.");
+                return false;
+            }
+
+            return true;
         }
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
