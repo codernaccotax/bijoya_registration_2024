@@ -1,5 +1,6 @@
 <?php
 require_once "../connection.php";
+require_once "delete.php";
 
 $stmt = $pdo->query("
     select id, registration_number, registration_name
@@ -17,20 +18,27 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for names..">
-<table id="registered-people" class="table table-bordered table-striped" style="width: 100%;">
-    <thead>
-        <tr>
-            <th>SL</th>
-            <th>Reg No.</th>
-            <th>Name</th>
-            <th>WhatsApp</th>
-            <th>Image</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody> 
-        <?php foreach ($registrations as $key => $reg): ?>
-           <?php 
+<form action="delete.php" method="POST">
+    <?php
+        if (isset($_SESSION['message'])) {
+            echo ''. $_SESSION['message'] .'';
+        }
+    ?>
+    <table id="registered-people" class="table table-bordered table-striped" style="width: 100%;">
+        <thead>
+            <tr>
+                <th>SL</th>
+                <th>Reg No.</th>
+                <th>Name</th>
+                <th>WhatsApp</th>
+                <th>Image</th>
+                <th>Whatsapp</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($registrations as $key => $reg): ?>
+            <?php 
                 $message="Dear ".$reg['registration_name'].", ";
                 $message.="%0D%0A"."আপনার রেজিস্ট্রেশন সম্পূর্ণ হয়েছে, Registration No. ".$reg['registration_number'].""; 
                 $message.=" আপনি ২০শে অক্টোবর ২০২৪ এ আমাদের বিজয়া সন্মিলনীতে উপস্থিত থাকার যে অঙ্গীকার করেছেন তার জন্য আপনাকে ধন্যবাদ\n";
@@ -47,6 +55,7 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $message.="Thanking you";
                 $message.="%0D%0A";
                 $message.="Coder "."%26"." AccoTax";
+               
 
            ?>
             <tr>
@@ -56,16 +65,23 @@ $registrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <td><?php echo htmlspecialchars($reg['whatsapp']); ?></td>
                 <td>
                     <a target="_blank" href="../student_images/<?php echo $reg['registration_number'];?>.jpg">
-                        <img src="../student_images/<?php echo $reg['registration_number'];?>.jpg" alt="no image" width="30px">
+                        <img src="../student_images/<?php echo $reg['registration_number'];?>.jpg" alt="no image"
+                            width="30px">
                     </a>
                 </td>
                 <td>
-                <a target="_blank" href="https://api.whatsapp.com/send?phone=+91<?php echo $reg['whatsapp_original'];?>&text=<?php echo $message; ?>">whatsapp</a>
+                    <a target="_blank"
+                        href="https://api.whatsapp.com/send?phone=+91<?php echo $reg['whatsapp_original'];?>&text=<?php echo $message; ?>">whatsapp</a>
                 </td>
                 <td>
                     <a href="edit_registration.php?id=<?php echo $reg['id'];?>">Edit</a>
+                    <button type="submit" name="delete_student" value="<?php echo $reg['id'];?>" class="btn btn-danger">Delete</button>
                 </td>
             </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+            <?php 
+            endforeach; 
+            
+        ?>
+        </tbody>
+    </table>
+</form>
